@@ -57,3 +57,21 @@ it('array shift', () => {
     expect(arr[0]).toBe('b');
     
   });
+
+  function hasDuplicates(arr){
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+  it('checks an array for duplicates', () => {
+    const arr = ['j', 'o', 'w', 'w'];
+    const arr2 = ['j', 'o', 'w', 'y'];
+    expect(hasDuplicates(arr)).toBe(true)
+    expect(hasDuplicates(arr2)).toBe(false)
+  })
